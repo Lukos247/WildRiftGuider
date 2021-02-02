@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="dark_jungle">#112120</color>
+    <color name="magic_mint">#a5f5d8</color>
+    <color name="oracle">#3a7875</color>
+    <color name="deep_sea_green">#14555b</color>
+    <color name="english_walnut">#FF018786</color>
+    <color name="irish_coffee">#564624</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="driftwood">#ae914b</color>
+    <color name="wild_rice">#f4de93</color>
+</resources>

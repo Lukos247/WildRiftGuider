@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Wild rift</string>
+    <string name="facebook_app_id">123</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="adver_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="champions">Champions</string>
+    <string name="runes">Runes</string>
+    <string name="items">Items</string>
+
+
+</resources>

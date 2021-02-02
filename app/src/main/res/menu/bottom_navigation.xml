@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/championsBottomMenu"
+        android:icon="@drawable/champions_icon"
+        android:title="@string/champions"
+        />
+
+    <item
+        android:id="@+id/runesBottomMenu"
+        android:icon="@drawable/rune_icon"
+        android:title="@string/runes"
+        />
+
+    <item
+        android:id="@+id/itemsBottomMenu"
+        android:icon="@drawable/items_icon"
+        android:title="@string/items"
+        />
+
+</menu>

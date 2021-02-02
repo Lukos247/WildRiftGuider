@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/championsListFragment">
+
+    <fragment
+        android:id="@+id/championsListFragment"
+        android:name="com.app.wildrift.view.ChampionsListFragment"
+        android:label="fragment_champions_list"
+        tools:layout="@layout/fragment_champions_list" >
+        <action
+            android:id="@+id/action_championsListFragment_to_championFragment"
+            app:destination="@id/championFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_championsListFragment_to_runesListFragment"
+            app:destination="@id/runesListFragment" />
+        <action
+            android:id="@+id/action_championsListFragment_to_itemsListFragment"
+            app:destination="@id/itemsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/runesListFragment"
+        android:name="com.app.wildrift.view.RunesListFragment"
+        android:label="fragment_runes_list"
+        tools:layout="@layout/fragment_runes_list" >
+        <action
+            android:id="@+id/action_runesListFragment_to_runeFragment"
+            app:destination="@id/runeFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_runesListFragment_to_championsListFragment"
+            app:destination="@id/championsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/championFragment"
+        android:name="com.app.wildrift.view.ChampionFragment"
+        android:label="fragment_champion"
+        tools:layout="@layout/fragment_champion" />
+    <fragment
+        android:id="@+id/itemsListFragment"
+        android:name="com.app.wildrift.view.itemsListFragment"
+        android:label="fragment_items_list"
+        tools:layout="@layout/fragment_items_list" >
+        <action
+            android:id="@+id/action_itemsListFragment_to_itemFragment"
+            app:destination="@id/itemFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_itemsListFragment_to_runesListFragment"
+            app:destination="@id/runesListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/runeFragment"
+        android:name="com.app.wildrift.view.RuneFragment"
+        android:label="fragment_rune"
+        tools:layout="@layout/fragment_rune" />
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="com.app.wildrift.view.ItemFragment"
+        android:label="fragment_item"
+        tools:layout="@layout/fragment_item" />
+</navigation>
