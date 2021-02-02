@@ -71,6 +71,34 @@
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/image_view_champion_icon" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_runes_list"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_runes" />
 
+    <com.google.android.material.textview.MaterialTextView
+
+        android:id="@+id/tv_items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/my_border"
+        android:text="@string/items"
+        android:textAlignment="center"
+        android:textColor="@color/driftwood"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/rv_runes_list" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_items_list"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_items" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

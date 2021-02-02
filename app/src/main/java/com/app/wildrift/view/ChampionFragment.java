@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.wildrift.R;
 import com.app.wildrift.presenter.MyData;
@@ -32,6 +33,11 @@ public class ChampionFragment extends Fragment {
     private TextView championName;
     private TextView championDescription;
     private TextView championType;
+
+
+    private RecyclerView rvItems;
+    private RecyclerView rvRunes;
+
 
     public ChampionFragment() {
         // Required empty public constructor
@@ -101,5 +107,8 @@ public class ChampionFragment extends Fragment {
         championName = view.findViewById(R.id.tv_champion_name);
         championDescription = view.findViewById(R.id.tv_champion_description);
         championType = view.findViewById(R.id.tv_champion_type);
+
+        rvItems = view.findViewById(R.id.rv_items_list);
+        rvRunes = view.findViewById(R.id.rv_runes_list);
     }
 }
