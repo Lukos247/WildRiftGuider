@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/image_rune_icon"
+        android:id="@+id/image_ability_icon"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="10dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_rune_name"
+        android:id="@+id/tv_ability_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -28,22 +28,30 @@
         android:text="AHRI"
         android:textAlignment="center"
         android:textColor="@color/driftwood"
-        android:textSize="30sp"
+        android:textSize="16sp"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeStepGranularity="2sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/image_rune_icon"
+        app:layout_constraintStart_toEndOf="@+id/image_ability_icon"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_rune_description"
+        android:id="@+id/tv_ability_description"
         android:layout_width="200dp"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_marginTop="5dp"
         android:text="very very very big description of runes epta"
         android:textAlignment="viewStart"
         android:textColor="@color/driftwood"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeStepGranularity="2sp"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_rune_name"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rune_name" />
+        app:layout_constraintStart_toStartOf="@+id/tv_ability_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_ability_name" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

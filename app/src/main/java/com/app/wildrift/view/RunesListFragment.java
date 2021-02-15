@@ -3,6 +3,7 @@ package com.app.wildrift.view;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -10,6 +11,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.app.wildrift.R;
+import com.app.wildrift.model.Champion;
+import com.app.wildrift.model.RunesList;
+import com.app.wildrift.presenter.ChampionsListSctruct;
+import com.app.wildrift.presenter.MyData;
+import com.app.wildrift.presenter.RuneListAdapter;
+import com.app.wildrift.presenter.RuneListStruct;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +34,7 @@ public class RunesListFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     RecyclerView recyclerView;
+    RuneListAdapter adapter;
 
 
     // TODO: Rename and change types of parameters
@@ -65,6 +76,46 @@ public class RunesListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_runes_list, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_runes_list, container, false);
+        recyclerView = inflate.findViewById(R.id.rv_runes_list_fragment);
+        adapter = new RuneListAdapter();
+        //  LinearLayoutManager linearLayout = new LinearLayoutManager(inflate.getContext());
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(inflate.getContext(), 3);
+        // mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setAdapter(adapter);
+
+        createListRunes();
+
+        return  inflate;
+    }
+
+
+    private void createListRunes() {
+
+        Collection<RuneListStruct> runeListStructs = getMenu();
+        adapter.setItems(runeListStructs);
+
+    }
+
+
+    private Collection<RuneListStruct> getMenu(){
+
+        ArrayList<RuneListStruct> list = new ArrayList<RuneListStruct>();
+
+        for(int i = 0; i< MyData.runesList.size(); i++){
+
+            RunesList runesList = MyData.runesList.get(i);
+            String runeName = runesList.getRuneName();
+            String runeIcon = runesList.getRuneIcon();
+            int id = Integer.parseInt(runesList.getId());
+            list.add(new RuneListStruct(runeName,runeIcon,id));
+   //         list.add(new ChampionsListSctruct(championIcon,championName,id,champion.getLocalization()));
+        }
+
+
+
+
+        return list;
     }
 }

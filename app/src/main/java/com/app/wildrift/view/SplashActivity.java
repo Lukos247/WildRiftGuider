@@ -1,14 +1,20 @@
 package com.app.wildrift.view;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.app.wildrift.R;
 import com.app.wildrift.model.DataInfo;
 import com.app.wildrift.presenter.MyData;
+
+import java.util.Random;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -20,6 +26,18 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        ConstraintLayout constraintLayout = findViewById(R.id.splashBackround);
+        Resources res = getResources();
+        String[] splashScreens = res.getStringArray(R.array.splash_screens);
+        Random random = new Random();
+        int i = random.nextInt(splashScreens.length);
+        int id = getResources().getIdentifier(splashScreens[i], "drawable", getPackageName());
+
+        Drawable drawable = getDrawable(id);
+        TextView textView = findViewById(R.id.splashTextView);
+
+        textView.setText(textView.getText().toString().toUpperCase());
+        constraintLayout.setBackground(drawable);
         MyData.start();
         getServerInfo();
 

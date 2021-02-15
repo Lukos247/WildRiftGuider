@@ -15,6 +15,17 @@ public class Ability {
     @Expose
     private String abilityIcon;
 
+    public Ability(String abilityName, String abilityDescription, String abilityIcon) {
+        this.abilityName = abilityName;
+        this.abilityDescription = abilityDescription;
+        this.abilityIcon = abilityIcon;
+    }
+
+    public Ability(String abilityName, String abilityIcon) {
+        this.abilityName = abilityName;
+        this.abilityIcon = abilityIcon;
+    }
+
     public String getAbilityName() {
         return abilityName;
     }

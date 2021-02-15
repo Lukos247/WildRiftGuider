@@ -7,8 +7,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.app.wildrift.R;
+import com.app.wildrift.presenter.MyData;
+import com.squareup.picasso.Picasso;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,8 +27,12 @@ public class RuneFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private int id;
+    private ImageView icon;
+    private TextView name;
+    private TextView description;
+
+  //  private String mParam2;
 
     public RuneFragment() {
         // Required empty public constructor
@@ -52,8 +60,8 @@ public class RuneFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            id = getArguments().getInt("runeId");
+          //  mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -61,6 +69,32 @@ public class RuneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rune, container, false);
+        View view = inflater.inflate(R.layout.fragment_rune, container, false);
+        initGUI(view);
+
+        return view;
     }
+
+    private void initGUI(View view){
+
+        icon = view.findViewById(R.id.image_rune_icon);
+        name = view.findViewById(R.id.tv_rune_name);
+        description = view.findViewById(R.id.tv_rune_description);
+
+        for(int i = 0;i<= MyData.runesList.size()-1;i++){
+            if(Integer.parseInt(MyData.runesList.get(i).getId()) == id){
+                String runeIcon = MyData.runesList.get(i).getRuneIcon();
+                String runeName = MyData.runesList.get(i).getRuneName();
+                String runeDescription = MyData.runesList.get(i).getRuneDescription();
+
+                name.setText(runeName);
+                description.setText(runeDescription);
+
+                Picasso.get().load(runeIcon).into(icon);
+            }
+
+        }
+
+    }
+
 }

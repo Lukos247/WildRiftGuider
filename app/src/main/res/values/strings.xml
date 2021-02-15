@@ -1,12 +1,25 @@
 <resources>
-    <string name="app_name">Wild rift</string>
-    <string name="facebook_app_id">123</string>
+    <string name="app_name">Wild Guider rift</string>
+    <string name="facebook_app_id">1685620591619769</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="adver_banner_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="adver_banner_id">ca-app-pub-5179584660383388/4664538088</string>
     <string name="champions">Champions</string>
     <string name="runes">Runes</string>
     <string name="items">Items</string>
+    <string name="description">Description</string>
+    <string name="abilities">Abilities</string>
+    <string name="recipe">Recipe</string>
+    <string name="adver_interstitial_id">ca-app-pub-5179584660383388/5402904687</string>
+
+    <string-array name="splash_screens">
+         <item>splashone</item>
+         <item>splashtwo</item>
+         <item>splashthree</item>
+         <item>splashfour</item>
+         <item>splashfive</item>
+         <item>splashsix</item>
+    </string-array>
 
 
 </resources>

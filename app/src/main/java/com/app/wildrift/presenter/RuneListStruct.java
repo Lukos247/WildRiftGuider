@@ -6,6 +6,16 @@ public class RuneListStruct {
     private String runeURL;
     private String runeDescription;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    private int id;
+
     public String getRuneName() {
         return runeName;
     }
@@ -34,6 +44,17 @@ public class RuneListStruct {
         runeName = name;
         runeURL = url;
         runeDescription = description;
+    }
+
+    public RuneListStruct(String name,String url){
+        runeName = name;
+        runeURL = url;
+        runeDescription = null;
+    }
+    public RuneListStruct(String name, String url,int idRune){
+        runeName = name;
+        runeURL = url;
+        id = idRune;
     }
 
 

@@ -3,12 +3,22 @@ package com.app.wildrift.view;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.app.wildrift.R;
+import com.app.wildrift.model.ItemsList;
+import com.app.wildrift.presenter.ItemListAdapter;
+import com.app.wildrift.presenter.ItemListSctuct;
+import com.app.wildrift.presenter.MyData;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +35,9 @@ public class itemsListFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    RecyclerView recyclerView;
+    ItemListAdapter adapter;
 
     public itemsListFragment() {
         // Required empty public constructor
@@ -61,6 +74,37 @@ public class itemsListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_items_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_items_list, container, false);
+        recyclerView = view.findViewById(R.id.rv_items);
+        adapter = new ItemListAdapter();
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(view.getContext(), 3);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+        createMenu();
+
+    //    adapter.setItems();
+        return view;
     }
+
+
+    private void createMenu(){
+
+        Collection<ItemListSctuct> items = getItems();
+        adapter.setItems(items);
+    }
+
+    private Collection<ItemListSctuct> getItems() {
+        ArrayList<ItemListSctuct> itemList = new ArrayList<>();
+
+        for(int i = 0; i< MyData.itemsList.size(); i++){
+            ItemsList itemsList = MyData.itemsList.get(i);
+            itemList.add(new ItemListSctuct(itemsList.getItemDescription(),itemsList.getItemName(),itemsList.getItemStats(),"", Integer.parseInt(itemsList.getId())));
+        }
+
+
+        //
+        return itemList;
+    }
+
+
 }

@@ -12,6 +12,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.wildrift.R;
+import com.app.wildrift.view.MyAdverCallbacker;
 import com.squareup.picasso.Picasso;
 
 import java.sql.Time;
@@ -73,6 +74,9 @@ public class ChampionsListAdapter extends RecyclerView.Adapter<ChampionsListAdap
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                    MyAdverCallbacker.showAdverCounter();
+
                     iconChampion.animate()
                             .alpha(0f).rotation(1200f)
                             .setDuration(300);
